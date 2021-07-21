@@ -16,6 +16,6 @@ RUN go build
 FROM alpine
 WORKDIR /app
 COPY --from=build-env /go/src/github.com/gothinkster/golang-gin-realworld-example-app/golang-gin-realworld-example-app /app/golang-app
-USER golang
+USER nobody
 EXPOSE 8080
 ENTRYPOINT ./golang-app
